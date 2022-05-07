@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
+  <div>
+  </div>
 
+  <div>
+    <%=form.select(:physician_id,getPhysicians)%>
+  <div>
+    <%=form.select(:patient_id,getPatients)%>
+  </div>
   <div>
     <%= form.label :appointment_date, style: "display: block" %>
     <%= form.date_field :appointment_date %>

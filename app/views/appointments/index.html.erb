@@ -2,13 +2,24 @@
 
 <h1>Appointments</h1>
 
+<%= link_to "New appointment", new_appointment_path %>
 <div id="appointments">
-  <% @appointments.each do |appointment| %>
-    <%= render appointment %>
-    <p>
-      <%= link_to "Show this appointment", appointment %>
-    </p>
-  <% end %>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Physician</th>
+        <th scope="col">Patient</th>
+        <th scope="col">Appointment date</th>
+        <th scope="col">Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    <% @appointments.each do |appointment| %>
+      <%= render "appointment", appointment: appointment, show: "true"%>
+     <% end%>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New appointment", new_appointment_path %>

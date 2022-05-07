@@ -22,7 +22,6 @@ class AppointmentsController < ApplicationController
   # POST /appointments or /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
-
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to appointment_url(@appointment), notice: "Appointment was successfully created." }
@@ -65,6 +64,6 @@ class AppointmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def appointment_params
-      params.require(:appointment).permit(:appointment_date)
+      params.require(:appointment).permit(:appointment_date, :patient_id, :physician_id)
     end
 end

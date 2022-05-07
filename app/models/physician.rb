@@ -1,8 +1,8 @@
 class Physician < ApplicationRecord
 	before_create :generate_unique_id
 	
-	validate :name, :email, presence: true
-	validate :email, :unique_id, uniqueness: true
+	validates :name, :email, presence: true
+	validates :email, :unique_id, uniqueness: true
 
 	has_many :appointments
 	has_many :patients, through: :appointments

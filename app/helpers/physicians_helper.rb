@@ -1,2 +1,22 @@
 module PhysiciansHelper
+    def getApointmentPhysician 
+        appointment = "<h2>Apointment Details</h2>
+            <div>
+            <table class='table'>
+            <thead class='thead-dark'>
+                <tr>
+                <th scope='col'>#</th>
+                <th scope='col'>Physician Name</th>
+                <th scope='col'>Patient Name</th>
+                <th scope='col'>Apointment Date</th>
+                <th scope='col'>Action</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                #{render @physician.appointments}   
+            </tbody>
+            </table>
+            </div>"
+    end
 end
