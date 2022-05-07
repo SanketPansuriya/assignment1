@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+<h1>Patient Details</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Patient Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @patient%>
+  </tbody>
+</table>
+
+<%= getApointmentPatient.html_safe unless params[:show_apointment].present? && params[:show_apointment] == 'false' %>

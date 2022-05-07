@@ -1,0 +1,13 @@
+<tr id="<%= dom_id appointment %>">
+  <th scope="row"><%= appointment.id %></th>
+  <td><%= link_to appointment.physician.name, physician_path(appointment.physician, show_apointment: false) %></td>
+  <td><%= link_to appointment.patient.name, patient_path(appointment.patient, show_apointment: false) %></td>
+  <td><%= appointment.appointment_date %></td>
+  <td>
+    <div class="d-inline-flex">
+    <%= link_to "Show", appointment_path(appointment), class: "btn btn-info" if defined?(show) %>
+    <%= link_to "Edit", edit_appointment_path(appointment), class: "btn btn-success"%>
+    <%= button_to "Destroy", appointment, method: :delete, class: "btn btn-danger", form: {data: { turbo_confirm: 'Are you sure?' } }%>
+    </div>
+  </td>
+</tr>
