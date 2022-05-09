@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_05_07_111948) do
+
   create_table "appointments", force: :cascade do |t|
     t.datetime "appointment_date"
     t.integer "physician_id", null: false
@@ -20,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_07_111948) do
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
     t.index ["physician_id"], name: "index_appointments_on_physician_id"
   end
+
 
   create_table "industries", force: :cascade do |t|
     t.string "name"
@@ -36,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_07_111948) do
     t.index ["sector_id"], name: "index_industries_sectors_on_sector_id"
   end
 
+  
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.string "email"
