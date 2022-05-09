@@ -1,0 +1,10 @@
+<h1>Editing sector</h1>
+
+<%= render "form", sector: @sector, action: "update" %>
+
+<br>
+
+<div>
+  <%= link_to "Show this sector", has_and_belongs_to_many_sector_path(@sector) %> |
+  <%= link_to "Back to sectors", has_and_belongs_to_many_sectors_path %>
+</div>
