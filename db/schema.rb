@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_07_043431) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_05_07_111948) do
+
   create_table "appointments", force: :cascade do |t|
     t.datetime "appointment_date"
     t.integer "physician_id", null: false
@@ -21,6 +23,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_07_043431) do
     t.index ["physician_id"], name: "index_appointments_on_physician_id"
   end
 
+
+  create_table "industries", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "registration_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "industries_sectors", id: false, force: :cascade do |t|
+    t.integer "industry_id"
+    t.integer "sector_id"
+    t.index ["industry_id"], name: "index_industries_sectors_on_industry_id"
+    t.index ["sector_id"], name: "index_industries_sectors_on_sector_id"
+  end
+
+  
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -32,6 +51,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_07_043431) do
     t.string "name"
     t.string "email"
     t.string "unique_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sectors", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,9 @@
+<h1>New industry</h1>
+
+<%= render "form", industry: @industry, action: "new" %>
+
+<br>
+
+<div>
+  <%= link_to "Back to industries", has_and_belongs_to_many_industries_path %>
+</div>

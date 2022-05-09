@@ -1,0 +1,20 @@
+<h2>Sector Details</h2>
+<p style="color: green"><%= notice %></p>
+<div id="sectors">
+
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Sector Name</th>
+          <th scope="col">Action</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @sector %>
+      </tbody>
+  </table>
+</div>
+
+<%= getSectorsIndustries.html_safe %>
