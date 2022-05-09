@@ -21,7 +21,7 @@
       </thead>
       <tbody>
       <% @industries.each do |industry| %>
-        <%= render "industry", industry: industry, show: "true"%>
+        <%= render "industry", industry: industry, show: "true", action: true%>
       <% end%>
       </tbody>
   </table>

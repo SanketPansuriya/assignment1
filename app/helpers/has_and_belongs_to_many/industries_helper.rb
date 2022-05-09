@@ -7,8 +7,7 @@ module HasAndBelongsToMany::IndustriesHelper
       <thead class='thead-dark'>
         <tr>
           <th scope='col'>#</th>
-          <th scope='col'>Sector Name</th>
-          <th scope='col'>Action</th>
+          <th scope='col'>Sector Name</a></th>
         
         </tr>
       </thead>

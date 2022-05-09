@@ -18,7 +18,7 @@
       </thead>
       <tbody>
       <% @sectors.each do |sector| %>
-        <%= render "sector", sector: sector, show: "true"%>
+        <%= render "sector", sector: sector, show: "true", action: true%>
       <% end%>
       </tbody>
   </table>
