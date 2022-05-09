@@ -9,7 +9,6 @@ module HasAndBelongsToMany::SectorsHelper
                 <th scope='col'>Physician Name</th>
                 <th scope='col'>Patient Name</th>
                 <th scope='col'>Apointment Date</th>
-                <th scope='col'>Action</th>
                 
                 </tr>
             </thead>
