@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% if controller.class.name.split("::").first=="HasManyThrough"%>
+      <%= render "layouts/nav_has_many_through"%>
+    <% elsif controller.class.name.split("::").first=="HasAndBelongsToMany"%>
+      <%= render "layouts/nav_has_and_belongs_to_many"%>
+    <%end %>
     <%= yield %>
   </body>
 </html>
+
+
