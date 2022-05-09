@@ -2,7 +2,10 @@ class Industry < ApplicationRecord
 	has_and_belongs_to_many :sectors, dependent: :destroy
 
 	validates :name,:email, presence: true
-	validates :email,uniqueness: true
+	validates :email, format: { with: /\A[a-zA-Z0-9.!\#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\z/, 
+				message: " invalid"  }, 
+				uniqueness: { case_sensitive: false }, 
+				length: { minimum: 4, maximum: 254 }
 
 	before_create :generate_registration_number
 
