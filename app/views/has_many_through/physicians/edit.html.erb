@@ -1,0 +1,10 @@
+<h1>Editing physician</h1>
+
+<%= render "form", physician: @physician, action: "update" %>
+
+<br>
+
+<div>
+  <%= link_to "Show this physician", has_many_through_physician_path(@physician) %> |
+  <%= link_to "Back to physicians", has_many_through_physicians_path %>
+</div>
