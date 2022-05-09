@@ -1,0 +1,9 @@
+<h1>New physician</h1>
+
+<%= render "form", physician: @physician, action: "create" %>
+
+<br>
+
+<div>
+  <%= link_to "Back to physicians", has_many_through_physicians_path %>
+</div>

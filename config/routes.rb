@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :has_many_through do
+    resources :appointments
+    resources :physicians
+    resources :patients
+    root "appointments#index"
+  end
+  
   namespace :has_and_belongs_to_many do
     resources :sectors
     resources :industries

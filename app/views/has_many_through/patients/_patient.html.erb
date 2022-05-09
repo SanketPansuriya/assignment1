@@ -1,0 +1,15 @@
+<tr id="<%= dom_id patient %>">
+  <th scope="row"><%= patient.id %></th>
+  <td><%= patient.name %></td>
+  <td><%= patient.email %></td>
+  <% if defined?(show)%>
+    <td><%= patient.appointments.count %></td>
+  <%end%>
+  <td>
+    <div class="d-inline-flex">
+    <%= link_to "Show", has_many_through_patient_path(patient), class: "btn btn-info" if defined?(show) %>
+    <%= link_to "Edit", edit_has_many_through_patient_path(patient), class: "btn btn-success"%>
+    <%= button_to "Destroy", has_many_through_patient_path(patient), method: :delete, class: "btn btn-danger", form: {data: { turbo_confirm: 'Are you sure?' } }%>
+    </div>
+  </td>
+</tr>
