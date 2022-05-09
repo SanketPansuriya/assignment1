@@ -1,0 +1,10 @@
+<h1>Editing industry</h1>
+
+<%= render "form", industry: @industry, action: "update" %>
+
+<br>
+
+<div>
+  <%= link_to "Show this industry", has_and_belongs_to_many_industry_path(@industry) %> |
+  <%= link_to "Back to industries", has_and_belongs_to_many_industries_path %>
+</div>

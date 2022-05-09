@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Sectors</h1>
+
+<%= link_to "New sector", new_has_and_belongs_to_many_sector_path %>
+
+<div id="sectors">
+
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Sector Name</th>
+          <th scope="col">Total Industries</th>
+          <th scope="col">Action</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+      <% @sectors.each do |sector| %>
+        <%= render "sector", sector: sector, show: "true"%>
+      <% end%>
+      </tbody>
+  </table>
+</div>

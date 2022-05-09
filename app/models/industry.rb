@@ -12,7 +12,7 @@ class Industry < ApplicationRecord
 					registration_number = "reg-"+SecureRandom.hex(3)+"-"+SecureRandom.hex(2).to_i(16).to_s+"-"+SecureRandom.hex(3)
 					skip if registration_number.size != 23
 					self.registration_number = registration_number
-					break unless Physician.exists?(registration_number: registration_number)
+					break unless Industry.exists?(registration_number: registration_number)
 				end
 			end
 end

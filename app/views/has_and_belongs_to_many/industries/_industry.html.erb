@@ -1,0 +1,16 @@
+<tr id="<%= dom_id industry %>">
+  <th scope="row"><%= industry.id %></th>
+  <td><%= industry.name%></td>
+  <td><%= industry.email %></td>
+  <td><%= industry.registration_number %></td>
+  <% if defined?(show)%>
+    <td><%= industry.sectors.count %></td>
+  <%end%>
+  <td>
+    <div class="d-inline-flex">
+    <%= link_to "Show", has_and_belongs_to_many_industry_path(industry), class: "btn btn-info" if defined?(show) %>
+    <%= link_to "Edit", edit_has_and_belongs_to_many_industry_path(industry), class: "btn btn-success"%>
+    <%= button_to "Destroy", has_and_belongs_to_many_industries_path(industry), method: :delete, class: "btn btn-danger", form: {data: { turbo_confirm: 'Are you sure?' } }%>
+    </div>
+  </td>
+</tr>
